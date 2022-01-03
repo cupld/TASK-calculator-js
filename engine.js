@@ -4,7 +4,7 @@
  * You pass it a text, and it prints it
  */
 function printOnConsole(text) {
-  console.log(text);
+  // console.log(text);
   document.getElementById("console").innerText = `${text}`;
 }
 
@@ -17,15 +17,24 @@ function printOnConsole(text) {
 
 // DON'T TOUCH THIS CODE
 function updateHistory(historyArray) {
+  console.log(
+    "🚀 ~ file: engine.js ~ line 20 ~ updateHistory ~ historyArray",
+    historyArray
+  );
   const listComponent = (text) =>
     `
-        <li>
-            ${text}
-        </li>
-        
-    `;
+  <li>
+  ${text}
+  </li>
+  
+  `;
+
   const historyList = document.getElementById("history-list");
+  console.log(
+    "🚀 ~ file: engine.js ~ line 29 ~ updateHistory ~ historyList",
+    historyList
+  );
   historyList.innerHTML = historyArray
     .map((historyInstance) => listComponent(historyInstance))
-    .join("");
+    .join(" ");
 }
